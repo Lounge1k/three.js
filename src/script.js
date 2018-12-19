@@ -23,7 +23,7 @@ var animate = function () {
 
 var loader = new THREE.FontLoader();
 
-loader.load( './font.js', function ( font ) {
+loader.load( './src/font.js', function ( font ) {
     console.log(font);
     var geo_font = new THREE.TextGeometry( '8.5', {
         font: font,
