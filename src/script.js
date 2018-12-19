@@ -10,7 +10,7 @@ let scene = new THREE.Scene();
 
 //Camera
 let camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, .1, 1000);
-camera.position.set(0,10,30);
+camera.position.set(0,7,30);
 camera.up = new THREE.Vector3(0,0,-2);
 camera.lookAt(new THREE.Vector3(0,0,-2));
 
@@ -33,7 +33,7 @@ light.position.set( -5, 5, 10 );
 
 //Loading font and rendering scene
 let height = 3,
-    size = 13,
+    size = 15,
     curveSegments = 12,
     font = undefined;
 
