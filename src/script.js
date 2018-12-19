@@ -1,12 +1,12 @@
 var text = "aems",
-    height = 1,
-    size = 10,
+    height = 3,
+    size = 13,
     curveSegments = 12,
     font = undefined;
 var cube;
 
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 90, window.innerWidth/window.innerHeight,.1, 1000);
+var camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight,.1, 1000);
 
 var renderer = new THREE.WebGLRenderer();
 document.getElementById("canvas").appendChild( renderer.domElement );
@@ -25,7 +25,7 @@ var loader = new THREE.FontLoader();
 
 loader.load( './src/font.js', function ( font ) {
     console.log(font);
-    var geo_font = new THREE.TextGeometry( '8.5', {
+    var geo_font = new THREE.TextGeometry( '9.5', {
         font: font,
         size: size,
         height: height,
