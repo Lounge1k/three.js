@@ -9,8 +9,8 @@ let numberFromBlock = '9.5';
 let scene = new THREE.Scene();
 
 //Camera
-let camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, .1, 1000);
-camera.position.set(0,7,30);
+let camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, .1, 1000);
+camera.position.set(0,5,30);
 camera.up = new THREE.Vector3(0,0,-2);
 camera.lookAt(new THREE.Vector3(0,0,-2));
 
@@ -32,7 +32,7 @@ light.position.set( -5, 5, 10 );
 
 
 //Loading font and rendering scene
-let height = 3,
+let height = 4,
     size = 15,
     curveSegments = 12,
     font = undefined;
