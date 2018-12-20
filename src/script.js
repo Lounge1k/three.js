@@ -2,24 +2,27 @@ let rating;
 
 //get this value from html
 //<------NUMBER----
-let numberFromBlock = '9.5';
+let numberFromBlock = '3.5';
 //<------NUMBER-------->
 
 //Scene
 let scene = new THREE.Scene();
 
 //Camera
-let camera = new THREE.PerspectiveCamera( 50, window.innerWidth/window.innerHeight, .1, 1000);
-camera.position.set(0,5,30);
+let camera = new THREE.PerspectiveCamera( 100, window.innerWidth/window.innerHeight, .1, 1000);
+camera.position.set(0,0,15);
 camera.up = new THREE.Vector3(0,0,-2);
 camera.lookAt(new THREE.Vector3(0,0,-2));
 
 //Render
 let renderer = new THREE.WebGLRenderer({alpha: true});
+
 //render transparent scene
 renderer.setClearColor( 0x000000, 0 );
-//apply scene to html
-document.getElementById("canvas").appendChild( renderer.domElement );
+
+//apply renderer to html
+//PLACE NAME OF A BLOCK HERE
+document.querySelector("#canvas").appendChild( renderer.domElement );
 
 //Used material
 let material = new THREE.MeshPhongMaterial( { color: 0xff1488  } );
@@ -29,23 +32,20 @@ let material = new THREE.MeshPhongMaterial( { color: 0xff1488  } );
 let light = new THREE.DirectionalLight( 0xffffff, 1 );
 light.position.set( -5, 5, 10 );
 
-
-
 //Loading font and rendering scene
-let height = 4,
+let height = 3,
     size = 15,
     curveSegments = 12,
     font = undefined;
 
 let loader = new THREE.FontLoader();
-loader.load( './src/font.js', function ( font ) {
+loader.load( './src/font.json', function ( font ) {
     let geo_font = new THREE.TextGeometry( numberFromBlock, {
         font: font,
         size: size,
         height: height,
         curveSegments:curveSegments,
         weight: "normal"
-
     } );
     geo_font.center();
     rating = new THREE.Mesh( geo_font, material );
@@ -58,7 +58,7 @@ loader.load( './src/font.js', function ( font ) {
     animate();
 } );
 
-//Rotat animation
+//Rotate animation
 const animate = function () {
     requestAnimationFrame( animate );
     rating.rotation.y += 0.03;
